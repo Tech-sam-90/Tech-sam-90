@@ -55,6 +55,23 @@
       "bullets": [
         "Research on vision–language models for 3D medical imaging; lead developer of ICTC (see Research Projects).",
         "Built the full research pipeline, from data ingestion and the compression projector to multi-task training and evaluation across six visual token budgets."
+      ],
+      "bullets_plain": [
+        "Research on vision–language models for 3D medical imaging; lead developer of ICTC (see Research Projects).",
+        "Built the full research pipeline, from data ingestion and the compression projector to multi-task training and evaluation across six visual token budgets."
+      ]
+    },
+    {
+      "role": "Research Assistant",
+      "unit": "IEEE SkillUp Hub (Region 8) / Centre for Future Technologies",
+      "institution": "University of Chichester",
+      "dates": "Mar 2026 – Present",
+      "on_cv": false,
+      "bullets": [
+        "Research on AI-based diagnostic solutions for health systems in low- and middle-income countries."
+      ],
+      "bullets_plain": [
+        "Research on AI-based diagnostic solutions for health systems in low- and middle-income countries."
       ]
     },
     {
@@ -66,6 +83,10 @@
       },
       "dates": "Oct 2023 – Jan 2025",
       "bullets": [
+        "Built a Flask and Random Forest energy-monitoring platform on Google Cloud (99% uptime), improving monitoring accuracy by 30%.",
+        "Piloted drones for field data collection, cutting collection time by 30% and improving data quality by 12%."
+      ],
+      "bullets_plain": [
         "Built a Flask and Random Forest energy-monitoring platform on Google Cloud (99% uptime), improving monitoring accuracy by 30%.",
         "Piloted drones for field data collection, cutting collection time by 30% and improving data quality by 12%."
       ]
@@ -83,6 +104,9 @@
       "dates": "Fall 2026",
       "bullets": [
         "Supporting a course on edge-to-cloud AI systems, from embedded machine learning on Raspberry Pi and Arduino to cloud-based model analysis."
+      ],
+      "bullets_plain": [
+        "Supporting a course on edge-to-cloud AI systems, from embedded machine learning on Raspberry Pi and Arduino to cloud-based model analysis."
       ]
     },
     {
@@ -96,6 +120,9 @@
       "dates": "Spring 2026",
       "bullets": [
         "Supported more than 200 undergraduate, master's and doctoral students through office hours, course-overview sessions and grading."
+      ],
+      "bullets_plain": [
+        "Supported more than 200 undergraduate, master's and doctoral students through office hours, course-overview sessions and grading."
       ]
     },
     {
@@ -104,6 +131,9 @@
       "institution": "Carnegie Mellon University",
       "dates": "Spring 2026",
       "bullets": [
+        "Led small-group tutoring on regression, classification, model evaluation and the underlying linear algebra and probability."
+      ],
+      "bullets_plain": [
         "Led small-group tutoring on regression, classification, model evaluation and the underlying linear algebra and probability."
       ]
     }
@@ -119,6 +149,7 @@
         "url": "https://scholar.google.com/citations?user=8PbgiPkAAAAJ&hl=en"
       },
       "repo": "https://github.com/Tech-sam-90/3d_compression",
+      "site_status": "Ongoing research",
       "stack": [
         "Python",
         "PyTorch",
@@ -139,7 +170,14 @@
         "On the CT-RATE validation set (3,039 scans): ROUGE-L 0.273, BLEU-4 0.128 and RaTEScore 0.801 for full report generation.",
         "Built a multi-task instruction pipeline (report generation, entity questions, abnormality question answering) with a 368-test suite, evaluated across six token budgets from 16 to 512.",
         "Now adding instruction-conditioned plane selection, where the clinical question chooses an interpretable, anatomy-aware 3D viewing plane."
-      ]
+      ],
+      "bullets_plain": [
+        "Designed a two-stage token compressor for 3D chest CT report generation. A Perceiver stage condenses each slice to 32 latents, then an instruction-conditioned stage condenses the slices into a fixed budget of visual tokens for a LoRA-adapted language model.",
+        "On the CT-RATE validation set (3,039 scans): ROUGE-L 0.273, BLEU-4 0.128 and RaTEScore 0.801 for full report generation.",
+        "Built a multi-task instruction pipeline (report generation, entity questions, abnormality question answering) with a 368-test suite, evaluated across six token budgets from 16 to 512.",
+        "Now adding instruction-conditioned plane selection, where the clinical question chooses an interpretable, anatomy-aware 3D viewing plane."
+      ],
+      "paper_links": []
     },
     {
       "id": "fpn-mamba",
@@ -150,6 +188,8 @@
         "url": "https://scholar.google.com/citations?user=TEMlkDMAAAAJ&hl=en"
       },
       "repo": "https://github.com/Tech-sam-90/fpn-inceptentionnet",
+      "publication": "fpn-mamba",
+      "site_status": "Accepted · NeurIPS 2026 Africa in AI Workshop",
       "stack": [
         "Python",
         "PyTorch",
@@ -167,6 +207,17 @@
         "Combined a feature pyramid network with bidirectional Mamba state-space blocks to detect small brain metastases in MRI, in linear time.",
         "Against a re-implemented InceptentionNet (5 seeds × 3 folds), reaches AUC 0.982 vs 0.897 and smallest-lesion recall 0.870 vs 0.788 (all p < 0.02), and trains 3.7× faster per step than a matched self-attention design at 512 pixels.",
         "Accepted at the Africa in AI Workshop, NeurIPS 2026 — [OpenReview](https://openreview.net/forum?id=te52LwNBSf)."
+      ],
+      "bullets_plain": [
+        "Combined a feature pyramid network with bidirectional Mamba state-space blocks to detect small brain metastases in MRI, in linear time.",
+        "Against a re-implemented InceptentionNet (5 seeds × 3 folds), reaches AUC 0.982 vs 0.897 and smallest-lesion recall 0.870 vs 0.788 (all p < 0.02), and trains 3.7× faster per step than a matched self-attention design at 512 pixels.",
+        "Accepted at the Africa in AI Workshop, NeurIPS 2026 — OpenReview."
+      ],
+      "paper_links": [
+        {
+          "label": "OpenReview",
+          "url": "https://openreview.net/forum?id=te52LwNBSf"
+        }
       ]
     },
     {
@@ -175,6 +226,8 @@
       "readme_title": "Where Do Malaria Detector False Positives Come From?",
       "dates": "Jan 2026 – Aug 2026",
       "repo": "https://github.com/Tech-sam-90/malaria_fp_analysis",
+      "publication": "malaria-wbc",
+      "site_status": "Oral · MICCAI 2026",
       "stack": [
         "Python",
         "PyTorch",
@@ -194,6 +247,29 @@
         "Ran a controlled study on 8,000 Giemsa-stained thick blood-smear images from Uganda and Ghana, comparing detectors trained with and without white blood cell labels.",
         "Seven independent spatial and statistical analyses (including Ripley's Cross-K, DBSCAN and Mann–Whitney U) refuted the common belief that white blood cells cause false-positive parasite detections, pointing to staining artefacts instead.",
         "Accepted for oral presentation at the MIRASOL Workshop, MICCAI 2026 — [paper](https://papers.miccai.org/miccai-2026-sat/MIRASOL_018.html) · [arXiv:2609.29663](https://arxiv.org/abs/2609.29663)."
+      ],
+      "bullets_plain": [
+        "Ran a controlled study on 8,000 Giemsa-stained thick blood-smear images from Uganda and Ghana, comparing detectors trained with and without white blood cell labels.",
+        "Seven independent spatial and statistical analyses (including Ripley's Cross-K, DBSCAN and Mann–Whitney U) refuted the common belief that white blood cells cause false-positive parasite detections, pointing to staining artefacts instead.",
+        "Accepted for oral presentation at the MIRASOL Workshop, MICCAI 2026 — paper · arXiv:2609.29663."
+      ],
+      "paper_links": [
+        {
+          "label": "MICCAI",
+          "url": "https://papers.miccai.org/miccai-2026-sat/MIRASOL_018.html"
+        },
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2609.29663"
+        },
+        {
+          "label": "PDF",
+          "url": "https://papers.miccai.org/miccai-2026-sat/paper/MIRASOL_018.pdf"
+        },
+        {
+          "label": "OpenReview",
+          "url": "https://openreview.net/forum?id=DAv0RwrdIk"
+        }
       ]
     },
     {
@@ -202,6 +278,7 @@
       "readme_title": "Condition-Aware ICU Deterioration Risk",
       "dates": "Jan 2026 – May 2026",
       "repo": "https://github.com/Tech-sam-90/condition-aware_risk_CDSS",
+      "site_status": "Completed",
       "stack": [
         "Python",
         "PyTorch",
@@ -219,7 +296,12 @@
       "bullets": [
         "Benchmarked six diagnosis-conditioned sequence models (LSTM, GRU, TCN, BiLSTM with attention, Transformer, TFT-style) for deterioration risk on MIMIC-IV intensive care data; the best, a BiLSTM with attention, reaches ROC-AUC 0.76.",
         "Deployed it as a Dockerized FastAPI service with WebSocket streaming inference, built for reproducibility under PhysioNet data governance."
-      ]
+      ],
+      "bullets_plain": [
+        "Benchmarked six diagnosis-conditioned sequence models (LSTM, GRU, TCN, BiLSTM with attention, Transformer, TFT-style) for deterioration risk on MIMIC-IV intensive care data; the best, a BiLSTM with attention, reaches ROC-AUC 0.76.",
+        "Deployed it as a Dockerized FastAPI service with WebSocket streaming inference, built for reproducibility under PhysioNet data governance."
+      ],
+      "paper_links": []
     },
     {
       "id": "survival",
@@ -228,12 +310,27 @@
       "status": "in progress",
       "on_cv": false,
       "on_readme": true,
+      "on_site": false,
       "summary": "Generalizable survival modeling from TCGA whole-slide images, RNA and clinical data, building on SurvPath.",
-      "summary_plain": "Generalizable survival modeling from TCGA whole-slide images, RNA and clinical data, building on SurvPath."
+      "summary_plain": "Generalizable survival modeling from TCGA whole-slide images, RNA and clinical data, building on SurvPath.",
+      "paper_links": []
+    },
+    {
+      "id": "assistive-reader",
+      "title": "AI-Powered Reader for Visually Impaired Users",
+      "dates": 2024,
+      "repo": "https://github.com/Tech-sam-90/assistive_blind_reader",
+      "site_status": "Completed",
+      "on_cv": false,
+      "on_readme": false,
+      "summary": "A Raspberry Pi assistive device pairing an HD camera with optical character recognition and speech synthesis, reaching 98% reading accuracy with 40% lower latency. Awarded Best Assistive Project by the Faculty of Engineering, Federal University of Technology, Minna.",
+      "summary_plain": "A Raspberry Pi assistive device pairing an HD camera with optical character recognition and speech synthesis, reaching 98% reading accuracy with 40% lower latency. Awarded Best Assistive Project by the Faculty of Engineering, Federal University of Technology, Minna.",
+      "paper_links": []
     }
   ],
   "publications": [
     {
+      "id": "malaria-wbc",
       "title": "Investigating White Blood Cells as a Source of False-Positive Malaria Parasite Detection in African Blood-Smear Images",
       "authors": [
         "Samuel Akinwumi Adeniji",
@@ -261,6 +358,10 @@
           "url": "https://arxiv.org/abs/2609.29663"
         },
         {
+          "label": "PDF",
+          "url": "https://papers.miccai.org/miccai-2026-sat/paper/MIRASOL_018.pdf"
+        },
+        {
           "label": "OpenReview",
           "url": "https://openreview.net/forum?id=DAv0RwrdIk"
         },
@@ -268,9 +369,13 @@
           "label": "Code",
           "url": "https://github.com/Tech-sam-90/malaria_fp_analysis"
         }
-      ]
+      ],
+      "authors_initials": "S. A. Adeniji, G. C. Obasi, C.-V. Ntwali, A. M. Iorumbur, C. Raymond, L. Uwimana, A. T. Issah",
+      "self_index": 0,
+      "venue_display": "MICCAI 2026 Workshop: MIRASOL (oral presentation)"
     },
     {
+      "id": "fpn-mamba",
       "title": "FPN-Mamba: Linear-Time Bidirectional State Space Feature Pyramids for Small-Lesion Brain MRI Classification",
       "authors": [
         "Simbiat Damilola Adetoro",
@@ -290,7 +395,10 @@
           "label": "Code",
           "url": "https://github.com/Tech-sam-90/fpn-inceptentionnet"
         }
-      ]
+      ],
+      "authors_initials": "S. D. Adetoro, S. A. Adeniji, M. Busogi",
+      "self_index": 1,
+      "venue_display": "NeurIPS 2026 Workshop: Africa in AI"
     },
     {
       "title": "Convergence of Blockchain, Smart Microgrid and Energy Market",
@@ -301,7 +409,16 @@
       "venue": "Electrica",
       "details": "24(2), 367–374",
       "year": 2024,
-      "doi": "10.5152/electrica.2024.23132"
+      "doi": "10.5152/electrica.2024.23132",
+      "authors_initials": "K. E. Jack, S. A. Adeniji",
+      "self_index": 1,
+      "venue_display": "Electrica, 24(2), 367–374",
+      "links": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.5152/electrica.2024.23132"
+        }
+      ]
     },
     {
       "title": "Development of an Artificial Intelligence-Based Infant's Emotion Recognition System for a Caregiving Robot",
@@ -309,7 +426,32 @@
         "K. E. Jack",
         "Samuel Akinwumi Adeniji"
       ],
-      "doi": "10.5455/NJEAS.209325"
+      "venue": "Nigerian Journal of Engineering and Applied Sciences",
+      "year": 2024,
+      "doi": "10.5455/NJEAS.209325",
+      "authors_initials": "K. E. Jack, S. A. Adeniji",
+      "self_index": 1,
+      "venue_display": "Nigerian Journal of Engineering and Applied Sciences",
+      "links": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.5455/NJEAS.209325"
+        }
+      ]
+    },
+    {
+      "title": "Design and Implementation of a Secure IoT-Based Remote Monitoring System for an Autonomous Nanny Robot",
+      "authors": [
+        "Samuel Akinwumi Adeniji",
+        "K. E. Jack",
+        "E. Ani"
+      ],
+      "venue": "Submitted, under review",
+      "on_cv": false,
+      "authors_initials": "S. A. Adeniji, K. E. Jack, E. Ani",
+      "self_index": 0,
+      "venue_display": "Submitted, under review",
+      "links": []
     }
   ],
   "service": [
