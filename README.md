@@ -35,7 +35,7 @@ Generalizable survival modeling from TCGA whole-slide images, RNA and clinical d
 
 - **Investigating White Blood Cells as a Source of False-Positive Malaria Parasite Detection in African Blood-Smear Images**<br>
   **Samuel Akinwumi Adeniji**, Goodness Chidera Obasi, Chris-Victor Ntwali, Aondona Moses Iorumbur, Confidence Raymond, Lowami Uwimana, Ahmed Tahiru Issah<br>
-  *MICCAI 2026 Workshop: MIRASOL* (oral presentation) · [MICCAI](https://papers.miccai.org/miccai-2026-sat/MIRASOL_018.html) · [arXiv](https://arxiv.org/abs/2609.29663) · [OpenReview](https://openreview.net/forum?id=DAv0RwrdIk) · [Code](https://github.com/Tech-sam-90/malaria_fp_analysis)
+  *MICCAI 2026 Workshop: MIRASOL* (oral presentation) · [MICCAI](https://papers.miccai.org/miccai-2026-sat/MIRASOL_018.html) · [arXiv](https://arxiv.org/abs/2609.29663) · [PDF](https://papers.miccai.org/miccai-2026-sat/paper/MIRASOL_018.pdf) · [OpenReview](https://openreview.net/forum?id=DAv0RwrdIk) · [Code](https://github.com/Tech-sam-90/malaria_fp_analysis)
 
 - **FPN-Mamba: Linear-Time Bidirectional State Space Feature Pyramids for Small-Lesion Brain MRI Classification**<br>
   Simbiat Damilola Adetoro, **Samuel Akinwumi Adeniji**, Moise Busogi<br>

@@ -171,6 +171,32 @@ def build_json(data: dict) -> str:
         return x
 
     payload = walk(data)
+
+    # Site-ready extras, so the website needs no formatting logic of its own.
+    me = data["person"]["name"]
+    pubs_by_id = {p["id"]: p for p in data.get("publications", []) if p.get("id")}
+    for pub in payload.get("publications", []):
+        pub["authors_initials"] = ", ".join(initials(a) for a in pub["authors"])
+        pub["self_index"] = pub["authors"].index(me) if me in pub["authors"] else -1
+        parts = [pub.get("short_venue") or pub.get("venue")]
+        if pub.get("details") and not pub.get("short_venue"):
+            parts.append(pub["details"])
+        venue = ", ".join(x for x in parts if x)
+        if pub.get("note"):
+            venue += f" ({pub['note']})"
+        pub["venue_display"] = venue
+        links = list(pub.get("links", []))
+        if pub.get("doi"):
+            links.append({"label": "DOI", "url": f"https://doi.org/{pub['doi']}"})
+        pub["links"] = links
+    for section in ("experience", "teaching", "projects"):
+        for item in payload.get(section, []):
+            if "bullets" in item:
+                item["bullets_plain"] = [plain(b) for b in item["bullets"]]
+            if section == "projects":
+                pub = pubs_by_id.get(item.get("publication"))
+                item["paper_links"] = [l for l in pub.get("links", []) if l["label"] != "Code"] if pub else []
+
     payload["generated_from"] = "data/profile.yaml"
     payload["cv_pdf"] = "cv/Samuel_Adeniji_CV.pdf"
     return json.dumps(payload, indent=2, ensure_ascii=False) + "\n"

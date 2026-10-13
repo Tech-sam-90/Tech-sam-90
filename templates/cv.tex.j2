@@ -85,7 +85,7 @@
 
 \section{Research and Teaching Experience}
 
-<% for e in experience + teaching %>
+<% for e in experience + teaching if e.on_cv is not sameas false %>
 << dated(e) >>
 <% endfor %>
 \section{Research Projects}
@@ -108,7 +108,7 @@
 \section{Publications}
 \begin{enumerate}[leftmargin=1.4em, itemsep=0.25em, topsep=0.2em]
   \small
-<% for pub in publications %>
+<% for pub in publications if pub.on_cv is not sameas false %>
   \item << pub.authors | cv_authors >>. ``<< pub.title | tex >>.''<% if pub.venue %> \textit{<< pub.venue | tex >>}<% if pub.details %>, << pub.details | tex >><% endif %><% if pub.year|string not in pub.venue %>, << pub.year >><% endif %><% if pub.note %> (<< pub.note | tex >>)<% endif %>.<% endif %><% if pub.doi %> DOI: << pub.doi | tex >>.<% endif %><% for l in pub.links if l.label != 'Code' %><% if loop.first %> <% else %> $\cdot$ <% endif %>\href{<< l.url >>}{[<< l.label | tex >>]}<% endfor %>
 
 <% endfor %>

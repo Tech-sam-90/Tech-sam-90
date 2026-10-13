@@ -8,6 +8,8 @@
 #    –  (en dash, ranges)   —  (em dash)   ×  ≥  ≤  (converted for LaTeX)
 #    $K{=}32$            inline math (LaTeX in the CV, rendered on GitHub)
 #  Everything else is written as plain text; LaTeX escaping is automatic.
+#
+#  Where an item appears:  on_cv / on_readme / on_site  (default true when omitted)
 # =====================================================================
 
 person:
@@ -72,6 +74,14 @@ experience:
   #     - Developed machine learning methods for cardiovascular disease detection from ECG signals, supporting studies on aortic stenosis, aortic regurgitation and related cardiac conditions.
   #     - Extracted MFCC features from phonocardiogram/heart-sound signals as input representations, and applied Grad-CAM to verify that predictions were driven by physiologically meaningful signal regions.
 
+  - role: Research Assistant
+    unit: IEEE SkillUp Hub (Region 8) / Centre for Future Technologies
+    institution: University of Chichester
+    dates: Mar 2026 – Present
+    on_cv: false          # on the website only; set to true to add it to the CV
+    bullets:
+      - Research on AI-based diagnostic solutions for health systems in low- and middle-income countries.
+
   - role: Research Assistant (Intern)
     institution: Artificial Intelligence for Clean Energy Limited, Minna, Nigeria
     supervisor: {name: Dr. Jibril Abdullahi Bala, url: "https://scholar.google.com/citations?user=EPv13M8AAAAJ&hl=en"}
@@ -116,6 +126,7 @@ projects:
     org: Language and Spatial Laboratories, Carnegie Mellon University
     advisor: {name: Prof. Prasenjit Mitra, url: "https://scholar.google.com/citations?user=8PbgiPkAAAAJ&hl=en"}
     repo: https://github.com/Tech-sam-90/3d_compression
+    site_status: Ongoing research
     stack: [Python, PyTorch, Vision Transformers, Perceiver, LoRA, Hugging Face, CT-RATE]
     on_cv: true
     on_readme: true
@@ -137,6 +148,8 @@ projects:
     dates: Feb 2026 – Present
     advisor: {name: Prof. Moise Busogi, url: "https://scholar.google.com/citations?user=TEMlkDMAAAAJ&hl=en"}
     repo: https://github.com/Tech-sam-90/fpn-inceptentionnet
+    publication: fpn-mamba
+    site_status: Accepted · NeurIPS 2026 Africa in AI Workshop
     stack: [Python, PyTorch, Feature Pyramid Networks, Mamba state-space models, scikit-learn]
     on_cv: true
     on_readme: true
@@ -156,6 +169,8 @@ projects:
     readme_title: Where Do Malaria Detector False Positives Come From?
     dates: Jan 2026 – Aug 2026
     repo: https://github.com/Tech-sam-90/malaria_fp_analysis
+    publication: malaria-wbc
+    site_status: Oral · MICCAI 2026
     stack: [Python, PyTorch, Ultralytics YOLOv12, OpenCV, SciPy, DBSCAN, Weights & Biases]
     on_cv: true
     on_readme: true
@@ -175,6 +190,7 @@ projects:
     readme_title: Condition-Aware ICU Deterioration Risk
     dates: Jan 2026 – May 2026
     repo: https://github.com/Tech-sam-90/condition-aware_risk_CDSS
+    site_status: Completed
     stack: [Python, PyTorch, TensorFlow, MIMIC-IV, FastAPI, Docker, WebSockets, scikit-learn]
     on_cv: true
     on_readme: true
@@ -193,7 +209,21 @@ projects:
     status: in progress
     on_cv: false          # flip to true when ready
     on_readme: true
+    on_site: false        # needs a project page on the website first
     summary: Generalizable survival modeling from TCGA whole-slide images, RNA and clinical data, building on SurvPath.
+
+  - id: assistive-reader
+    title: AI-Powered Reader for Visually Impaired Users
+    dates: 2024
+    repo: https://github.com/Tech-sam-90/assistive_blind_reader
+    site_status: Completed
+    on_cv: false
+    on_readme: false
+    summary: >-
+      A Raspberry Pi assistive device pairing an HD camera with optical character
+      recognition and speech synthesis, reaching 98% reading accuracy with 40% lower
+      latency. Awarded Best Assistive Project by the Faculty of Engineering, Federal
+      University of Technology, Minna.
 
 # ---------------------------------------------------------------------
 #  Publications (in display order). Author names: full names, or
@@ -201,7 +231,8 @@ projects:
 #  selected: true → also listed on the GitHub profile / website.
 # ---------------------------------------------------------------------
 publications:
-  - title: Investigating White Blood Cells as a Source of False-Positive Malaria Parasite Detection in African Blood-Smear Images
+  - id: malaria-wbc
+    title: Investigating White Blood Cells as a Source of False-Positive Malaria Parasite Detection in African Blood-Smear Images
     authors: [Samuel Akinwumi Adeniji, Goodness Chidera Obasi, Chris-Victor Ntwali, Aondona Moses Iorumbur, Confidence Raymond, Lowami Uwimana, Ahmed Tahiru Issah]
     venue: Medical Image Computing in Resource Constrained Settings Workshop & Knowledge Interchange (MIRASOL), International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI) 2026
     short_venue: "MICCAI 2026 Workshop: MIRASOL"
@@ -212,9 +243,11 @@ publications:
     links:
       - {label: MICCAI, url: "https://papers.miccai.org/miccai-2026-sat/MIRASOL_018.html"}
       - {label: arXiv, url: "https://arxiv.org/abs/2609.29663"}
+      - {label: PDF, url: "https://papers.miccai.org/miccai-2026-sat/paper/MIRASOL_018.pdf"}
       - {label: OpenReview, url: "https://openreview.net/forum?id=DAv0RwrdIk"}
       - {label: Code, url: "https://github.com/Tech-sam-90/malaria_fp_analysis"}
-  - title: "FPN-Mamba: Linear-Time Bidirectional State Space Feature Pyramids for Small-Lesion Brain MRI Classification"
+  - id: fpn-mamba
+    title: "FPN-Mamba: Linear-Time Bidirectional State Space Feature Pyramids for Small-Lesion Brain MRI Classification"
     authors: [Simbiat Damilola Adetoro, Samuel Akinwumi Adeniji, Moise Busogi]
     venue: Africa in AI Workshop, Conference on Neural Information Processing Systems (NeurIPS) 2026
     short_venue: "NeurIPS 2026 Workshop: Africa in AI"
@@ -231,7 +264,13 @@ publications:
     doi: 10.5152/electrica.2024.23132
   - title: Development of an Artificial Intelligence-Based Infant's Emotion Recognition System for a Caregiving Robot
     authors: [K. E. Jack, Samuel Akinwumi Adeniji]
+    venue: Nigerian Journal of Engineering and Applied Sciences
+    year: 2024
     doi: 10.5455/NJEAS.209325
+  - title: Design and Implementation of a Secure IoT-Based Remote Monitoring System for an Autonomous Nanny Robot
+    authors: [Samuel Akinwumi Adeniji, K. E. Jack, E. Ani]
+    venue: Submitted, under review
+    on_cv: false          # on the website only; set to true to list it on the CV
 
 service:
   - "**SPRINT / SPARK AI for African Medical Imaging Knowledge Translation**, 2026 Cohort — state-of-the-art methods for glioma brain-tumour segmentation and translation of imaging AI into African clinical practice; led a capstone on malaria parasite detection."
