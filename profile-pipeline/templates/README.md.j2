@@ -1,0 +1,43 @@
+<!-- GENERATED from data/profile.yaml by scripts/build.py — edit the YAML, not this file. -->
+### Hi, I'm {{ person.display_name }}
+
+{{ person.bio | md }}
+
+**Research interests**
+{% for r in research_interests %}
+- {{ r | md }}
+{% endfor %}
+
+---
+
+### Selected projects
+
+{% for p in projects if p.on_readme %}
+**{% if p.repo %}[{{ p.readme_title or p.title }}]({{ p.repo }}){% else %}{{ p.readme_title or p.title }}{% endif %}**{% if p.status %} *({{ p.status }})*{% endif %}<br>
+{{ p.summary | md }}{% if p.note %} *{{ p.note | md }}*{% endif %}
+
+
+{% endfor %}
+---
+
+### Publications
+
+{% for pub in publications if pub.selected %}
+- **{{ pub.title }}**<br>
+  {{ pub.authors | md_authors }}<br>
+  *{{ pub.short_venue or pub.venue }}*{% if pub.note %} ({{ pub.note }}){% endif %}{% for l in pub.links %} · [{{ l.label }}]({{ l.url }}){% endfor %}
+
+
+{% endfor %}
+Full list on [Google Scholar]({{ contact.scholar }}) · [CV]({{ contact.github }}/{{ contact.github.rstrip('/').split('/')[-1] }}/blob/main/cv/Samuel_Adeniji_CV.pdf)
+
+---
+
+### Tools
+
+{% set tools = [] %}{% for g in skills if g.readme %}{% for i in g['items'] %}{% set _ = tools.append(i) %}{% endfor %}{% endfor %}
+{{ tools | join(' · ') }}
+
+---
+
+[Website]({{ contact.website }}) · [Google Scholar]({{ contact.scholar }}) · [LinkedIn]({{ contact.linkedin }}) · [{{ contact.email }}](mailto:{{ contact.email }})
