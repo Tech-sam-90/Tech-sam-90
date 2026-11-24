@@ -73,11 +73,18 @@ Medical vision--language models for 3D imaging; instruction-conditioned and toke
 
 \section{Research and Teaching Experience}
 
-\entry{Research Intern --- Language and Spatial Laboratories}{June 2026 -- Present}
+\entry{Research Intern --- Language and Spatial Laboratories}{May 2026 -- Aug 2026}
 \subentry{Carnegie Mellon University $\cdot$ Supervisor: \href{https://scholar.google.com/citations?user=8PbgiPkAAAAJ&hl=en}{Prof. Prasenjit Mitra}}
 \begin{bullets}
-  \item Research on vision--language models for 3D medical imaging; lead developer of ICTC (see Research Projects).
-  \item Built the full research pipeline, from data ingestion and the compression projector to multi-task training and evaluation across six visual token budgets.
+  \item Research on vision--language models for 3D chest CT; lead developer of the project (see Research Projects), which continues after the internship.
+  \item Built the full research pipeline, from data ingestion and token compression to multi-task training and evaluation across six visual token budgets.
+\end{bullets}
+
+\entry{Research Assistant (Volunteer) --- AI Healthcare Research Laboratory}{Jan 2026 -- Present}
+\subentry{Carnegie Mellon University Africa}
+\begin{bullets}
+  \item Machine learning for cardiovascular disease detection from ECG and heart-sound signals (aortic stenosis and regurgitation), using MFCC features and Grad-CAM to check that predictions rely on meaningful signal regions.
+  \item Part of the team proposing CardioSync, a multimodal foundation model linking ECG, heart sounds and cine cardiac MRI for screening.
 \end{bullets}
 
 \entry{Research Assistant (Intern)}{Oct 2023 -- Jan 2025}
@@ -107,14 +114,13 @@ Medical vision--language models for 3D imaging; instruction-conditioned and toke
 
 \section{Research Projects}
 
-\entry{\href{https://github.com/Tech-sam-90/3d_compression}{ICTC: Instruction-Conditioned Token Compression for 3D CT Vision--Language Models}}{June 2026 -- Present}
+\entry{\href{https://github.com/Tech-sam-90/3d_compression}{Scan-Specific Information in Compressed 3D CT Vision--Language Models}}{May 2026 -- Present}
 \subentry{Language and Spatial Laboratories, Carnegie Mellon University $\cdot$ Advisor: \href{https://scholar.google.com/citations?user=8PbgiPkAAAAJ&hl=en}{Prof. Prasenjit Mitra}}
 \stack{Python, PyTorch, Vision Transformers, Perceiver, LoRA, Hugging Face, CT-RATE}
 \begin{bullets}
-  \item Designed a two-stage token compressor for 3D chest CT report generation. A Perceiver stage condenses each slice to 32 latents, then an instruction-conditioned stage condenses the slices into a fixed budget of visual tokens for a LoRA-adapted language model.
-  \item On the CT-RATE validation set (3,039 scans): ROUGE-L 0.273, BLEU-4 0.128 and RaTEScore 0.801 for full report generation.
-  \item Built a multi-task instruction pipeline (report generation, entity questions, abnormality question answering) with a 368-test suite, evaluated across six token budgets from 16 to 512.
-  \item Now adding instruction-conditioned plane selection, where the clinical question chooses an interpretable, anatomy-aware 3D viewing plane.
+  \item Built a full pipeline for 3D chest-CT report generation on CT-RATE. A frozen slice encoder feeds a Perceiver-style stage that condenses each slice to 32 latents, an instruction-conditioned stage condenses the slices into a fixed budget of visual tokens, and a LoRA-adapted language model writes the report.
+  \item Built a multi-task instruction pipeline with a 368-test suite, evaluated across six token budgets from 16 to 512, and a step that selects 3D viewing planes inside the volume.
+  \item Diagnostic tests (swapping scans between reports) showed the model often wrote template-like reports even when text metrics looked reasonable; the project is now being rebuilt around measuring and keeping scan-specific information (arXiv report planned, then ICCV 2027).
 \end{bullets}
 
 \entry{\href{https://github.com/Tech-sam-90/fpn-inceptentionnet}{FPN-Mamba: Linear-Time Bidirectional State Space Feature Pyramids for Small-Lesion Brain MRI Classification}}{Feb 2026 -- Present}
@@ -129,8 +135,8 @@ Medical vision--language models for 3D imaging; instruction-conditioned and toke
 \entry{\href{https://github.com/Tech-sam-90/malaria_fp_analysis}{Investigating White Blood Cells as a Source of False-Positive Malaria Parasite Detection in African Blood-Smear Images}}{Jan 2026 -- Aug 2026}
 \stack{Python, PyTorch, Ultralytics YOLOv12, OpenCV, SciPy, DBSCAN, Weights \& Biases}
 \begin{bullets}
-  \item Ran a controlled study on 8,000 Giemsa-stained thick blood-smear images from Uganda and Ghana, comparing detectors trained with and without white blood cell labels.
-  \item Seven independent spatial and statistical analyses (including Ripley's Cross-K, DBSCAN and Mann--Whitney U) refuted the common belief that white blood cells cause false-positive parasite detections, pointing to staining artefacts instead.
+  \item Ran a controlled study on 6,593 Giemsa-stained thick blood-smear images from Uganda and Ghana, comparing detectors trained with and without white blood cell labels; about 95\% of false positives were background detections, with no class confusions.
+  \item Seven spatial and statistical analyses (including Ripley's Cross-K, DBSCAN and Mann--Whitney U), each comparing false positives with the model's own correct detections, did not support the belief that white blood cells cause false-positive parasite detections, pointing to staining variability instead.
   \item Accepted for oral presentation at the MIRASOL Workshop, MICCAI 2026 --- \href{https://papers.miccai.org/miccai-2026-sat/MIRASOL_018.html}{paper} $\cdot$ \href{https://arxiv.org/abs/2609.29663}{arXiv:2609.29663}.
 \end{bullets}
 

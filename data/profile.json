@@ -51,14 +51,28 @@
         "name": "Prof. Prasenjit Mitra",
         "url": "https://scholar.google.com/citations?user=8PbgiPkAAAAJ&hl=en"
       },
-      "dates": "June 2026 – Present",
+      "dates": "May 2026 – Aug 2026",
       "bullets": [
-        "Research on vision–language models for 3D medical imaging; lead developer of ICTC (see Research Projects).",
-        "Built the full research pipeline, from data ingestion and the compression projector to multi-task training and evaluation across six visual token budgets."
+        "Research on vision–language models for 3D chest CT; lead developer of the project (see Research Projects), which continues after the internship.",
+        "Built the full research pipeline, from data ingestion and token compression to multi-task training and evaluation across six visual token budgets."
       ],
       "bullets_plain": [
-        "Research on vision–language models for 3D medical imaging; lead developer of ICTC (see Research Projects).",
-        "Built the full research pipeline, from data ingestion and the compression projector to multi-task training and evaluation across six visual token budgets."
+        "Research on vision–language models for 3D chest CT; lead developer of the project (see Research Projects), which continues after the internship.",
+        "Built the full research pipeline, from data ingestion and token compression to multi-task training and evaluation across six visual token budgets."
+      ]
+    },
+    {
+      "role": "Research Assistant (Volunteer)",
+      "unit": "AI Healthcare Research Laboratory",
+      "institution": "Carnegie Mellon University Africa",
+      "dates": "Jan 2026 – Present",
+      "bullets": [
+        "Machine learning for cardiovascular disease detection from ECG and heart-sound signals (aortic stenosis and regurgitation), using MFCC features and Grad-CAM to check that predictions rely on meaningful signal regions.",
+        "Part of the team proposing CardioSync, a multimodal foundation model linking ECG, heart sounds and cine cardiac MRI for screening."
+      ],
+      "bullets_plain": [
+        "Machine learning for cardiovascular disease detection from ECG and heart-sound signals (aortic stenosis and regurgitation), using MFCC features and Grad-CAM to check that predictions rely on meaningful signal regions.",
+        "Part of the team proposing CardioSync, a multimodal foundation model linking ECG, heart sounds and cine cardiac MRI for screening."
       ]
     },
     {
@@ -141,8 +155,8 @@
   "projects": [
     {
       "id": "ictc",
-      "title": "ICTC: Instruction-Conditioned Token Compression for 3D CT Vision–Language Models",
-      "dates": "June 2026 – Present",
+      "title": "Scan-Specific Information in Compressed 3D CT Vision–Language Models",
+      "dates": "May 2026 – Present",
       "org": "Language and Spatial Laboratories, Carnegie Mellon University",
       "advisor": {
         "name": "Prof. Prasenjit Mitra",
@@ -161,21 +175,19 @@
       ],
       "on_cv": true,
       "on_readme": true,
-      "summary": "A dual-stage, instruction-conditioned token compressor for 3D chest CT. A Perceiver stage distils each slice and a FiLM-conditioned stage aggregates slices into a fixed budget of visual tokens for a LoRA-adapted language model that writes the radiology report. On CT-RATE validation (3,039 scans): ROUGE-L 0.273, BLEU-4 0.128, RaTEScore 0.801.",
-      "summary_plain": "A dual-stage, instruction-conditioned token compressor for 3D chest CT. A Perceiver stage distils each slice and a FiLM-conditioned stage aggregates slices into a fixed budget of visual tokens for a LoRA-adapted language model that writes the radiology report. On CT-RATE validation (3,039 scans): ROUGE-L 0.273, BLEU-4 0.128, RaTEScore 0.801.",
-      "note": "Summer 2026 research internship with Prof. Prasenjit Mitra.",
-      "note_plain": "Summer 2026 research internship with Prof. Prasenjit Mitra.",
+      "summary": "A vision–language pipeline that writes radiology reports from 3D chest CT, compressing each volume into a small budget of visual tokens. Swapping scans between reports showed the model often wrote template-like reports that barely depended on the scan, so the project now measures how much scan-specific information survives compression, and how to keep it.",
+      "summary_plain": "A vision–language pipeline that writes radiology reports from 3D chest CT, compressing each volume into a small budget of visual tokens. Swapping scans between reports showed the model often wrote template-like reports that barely depended on the scan, so the project now measures how much scan-specific information survives compression, and how to keep it.",
+      "note": "Research internship with Prof. Prasenjit Mitra (May–Aug 2026), continuing.",
+      "note_plain": "Research internship with Prof. Prasenjit Mitra (May–Aug 2026), continuing.",
       "bullets": [
-        "Designed a two-stage token compressor for 3D chest CT report generation. A Perceiver stage condenses each slice to 32 latents, then an instruction-conditioned stage condenses the slices into a fixed budget of visual tokens for a LoRA-adapted language model.",
-        "On the CT-RATE validation set (3,039 scans): ROUGE-L 0.273, BLEU-4 0.128 and RaTEScore 0.801 for full report generation.",
-        "Built a multi-task instruction pipeline (report generation, entity questions, abnormality question answering) with a 368-test suite, evaluated across six token budgets from 16 to 512.",
-        "Now adding instruction-conditioned plane selection, where the clinical question chooses an interpretable, anatomy-aware 3D viewing plane."
+        "Built a full pipeline for 3D chest-CT report generation on CT-RATE. A frozen slice encoder feeds a Perceiver-style stage that condenses each slice to 32 latents, an instruction-conditioned stage condenses the slices into a fixed budget of visual tokens, and a LoRA-adapted language model writes the report.",
+        "Built a multi-task instruction pipeline with a 368-test suite, evaluated across six token budgets from 16 to 512, and a step that selects 3D viewing planes inside the volume.",
+        "Diagnostic tests (swapping scans between reports) showed the model often wrote template-like reports even when text metrics looked reasonable; the project is now being rebuilt around measuring and keeping scan-specific information (arXiv report planned, then ICCV 2027)."
       ],
       "bullets_plain": [
-        "Designed a two-stage token compressor for 3D chest CT report generation. A Perceiver stage condenses each slice to 32 latents, then an instruction-conditioned stage condenses the slices into a fixed budget of visual tokens for a LoRA-adapted language model.",
-        "On the CT-RATE validation set (3,039 scans): ROUGE-L 0.273, BLEU-4 0.128 and RaTEScore 0.801 for full report generation.",
-        "Built a multi-task instruction pipeline (report generation, entity questions, abnormality question answering) with a 368-test suite, evaluated across six token budgets from 16 to 512.",
-        "Now adding instruction-conditioned plane selection, where the clinical question chooses an interpretable, anatomy-aware 3D viewing plane."
+        "Built a full pipeline for 3D chest-CT report generation on CT-RATE. A frozen slice encoder feeds a Perceiver-style stage that condenses each slice to 32 latents, an instruction-conditioned stage condenses the slices into a fixed budget of visual tokens, and a LoRA-adapted language model writes the report.",
+        "Built a multi-task instruction pipeline with a 368-test suite, evaluated across six token budgets from 16 to 512, and a step that selects 3D viewing planes inside the volume.",
+        "Diagnostic tests (swapping scans between reports) showed the model often wrote template-like reports even when text metrics looked reasonable; the project is now being rebuilt around measuring and keeping scan-specific information (arXiv report planned, then ICCV 2027)."
       ],
       "paper_links": []
     },
@@ -239,18 +251,18 @@
       ],
       "on_cv": true,
       "on_readme": true,
-      "summary": "A controlled study of two YOLOv12s detectors on 8,000 thick-smear images from Uganda and Ghana, using seven spatial and statistical analyses. It finds that white blood cells are *not* a systematic source of false positives, which redirects mitigation toward staining variability.",
-      "summary_plain": "A controlled study of two YOLOv12s detectors on 8,000 thick-smear images from Uganda and Ghana, using seven spatial and statistical analyses. It finds that white blood cells are not a systematic source of false positives, which redirects mitigation toward staining variability.",
+      "summary": "A controlled study of two YOLOv12s detectors on 6,593 thick-smear images from Uganda and Ghana (Lacuna dataset), using seven spatial and statistical analyses. The evidence does not support white blood cells as a systematic source of false positives, and points mitigation toward staining and preparation variability.",
+      "summary_plain": "A controlled study of two YOLOv12s detectors on 6,593 thick-smear images from Uganda and Ghana (Lacuna dataset), using seven spatial and statistical analyses. The evidence does not support white blood cells as a systematic source of false positives, and points mitigation toward staining and preparation variability.",
       "note": "MICCAI 2026 MIRASOL workshop (oral).",
       "note_plain": "MICCAI 2026 MIRASOL workshop (oral).",
       "bullets": [
-        "Ran a controlled study on 8,000 Giemsa-stained thick blood-smear images from Uganda and Ghana, comparing detectors trained with and without white blood cell labels.",
-        "Seven independent spatial and statistical analyses (including Ripley's Cross-K, DBSCAN and Mann–Whitney U) refuted the common belief that white blood cells cause false-positive parasite detections, pointing to staining artefacts instead.",
+        "Ran a controlled study on 6,593 Giemsa-stained thick blood-smear images from Uganda and Ghana, comparing detectors trained with and without white blood cell labels; about 95% of false positives were background detections, with no class confusions.",
+        "Seven spatial and statistical analyses (including Ripley's Cross-K, DBSCAN and Mann–Whitney U), each comparing false positives with the model's own correct detections, did not support the belief that white blood cells cause false-positive parasite detections, pointing to staining variability instead.",
         "Accepted for oral presentation at the MIRASOL Workshop, MICCAI 2026 — [paper](https://papers.miccai.org/miccai-2026-sat/MIRASOL_018.html) · [arXiv:2609.29663](https://arxiv.org/abs/2609.29663)."
       ],
       "bullets_plain": [
-        "Ran a controlled study on 8,000 Giemsa-stained thick blood-smear images from Uganda and Ghana, comparing detectors trained with and without white blood cell labels.",
-        "Seven independent spatial and statistical analyses (including Ripley's Cross-K, DBSCAN and Mann–Whitney U) refuted the common belief that white blood cells cause false-positive parasite detections, pointing to staining artefacts instead.",
+        "Ran a controlled study on 6,593 Giemsa-stained thick blood-smear images from Uganda and Ghana, comparing detectors trained with and without white blood cell labels; about 95% of false positives were background detections, with no class confusions.",
+        "Seven spatial and statistical analyses (including Ripley's Cross-K, DBSCAN and Mann–Whitney U), each comparing false positives with the model's own correct detections, did not support the belief that white blood cells cause false-positive parasite detections, pointing to staining variability instead.",
         "Accepted for oral presentation at the MIRASOL Workshop, MICCAI 2026 — paper · arXiv:2609.29663."
       ],
       "paper_links": [
@@ -305,14 +317,14 @@
     },
     {
       "id": "survival",
-      "title": "Multimodal Cancer Survival Prediction",
+      "title": "ClinFuse: Multimodal Cancer Survival Prediction",
       "dates": "Fall 2026 – Present",
       "status": "in progress",
       "on_cv": false,
       "on_readme": true,
       "on_site": false,
-      "summary": "Generalizable survival modeling from TCGA whole-slide images, RNA and clinical data, building on SurvPath.",
-      "summary_plain": "Generalizable survival modeling from TCGA whole-slide images, RNA and clinical data, building on SurvPath.",
+      "summary": "Survival prediction that adds clinical variables (stage, grade, age) to a whole-slide image and RNA model (building on SurvPath), trained to rank patients with a Cox loss and tested with whole hospitals held out. Without stage, it reaches c-index 0.712 vs 0.601 (kidney) and 0.671 vs 0.556 (endometrial) against SurvPath, and the ordering holds on external CPTAC hospitals. Team project; my part was data processing and training on the Narval cluster.",
+      "summary_plain": "Survival prediction that adds clinical variables (stage, grade, age) to a whole-slide image and RNA model (building on SurvPath), trained to rank patients with a Cox loss and tested with whole hospitals held out. Without stage, it reaches c-index 0.712 vs 0.601 (kidney) and 0.671 vs 0.556 (endometrial) against SurvPath, and the ordering holds on external CPTAC hospitals. Team project; my part was data processing and training on the Narval cluster.",
       "paper_links": []
     },
     {
