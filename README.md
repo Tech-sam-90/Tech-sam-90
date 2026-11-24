@@ -1,14 +1,14 @@
 <!-- GENERATED from data/profile.yaml by scripts/build.py — edit the YAML, not this file. -->
 ### Hi, I'm Samuel Adeniji
 
-I'm an M.S. student in Engineering AI at **Carnegie Mellon University Africa**. I build **vision–language and multimodal models for medical imaging and clinical decision support**. My work focuses on making these models efficient enough to run on large 3D scans, and honest enough about their limits to be trusted in low-resource health settings.
+I'm an M.S. student in Engineering AI at **Carnegie Mellon University Africa**. I work on **multimodal medical AI**: models that combine images such as pathology slides, CT and MRI with molecular and clinical data. I care about whether each input really helps, whether the model's evidence can be checked, and whether it still works at a new hospital, especially in low-resource and African health settings.
 
 **Research interests**
-- Medical vision–language models for 3D imaging
-- Instruction-conditioned and token-efficient architectures for volumetric data
-- Grounded radiology report generation and multi-scale representation learning
-- Interpretable and reliable medical AI
-- Deployment of imaging AI in low-resource and African clinical settings
+- Multimodal medical AI combining pathology images, molecular and clinical data
+- Explainable models whose evidence clinicians can check
+- Robustness to hospital, stain and scanner differences
+- Medical image analysis and vision–language models for CT and MRI
+- Fair and reliable AI for low-resource and African clinical settings
 
 ---
 
@@ -23,11 +23,17 @@ Feature pyramid plus bidirectional Mamba for small brain-metastasis screening on
 **[Where Do Malaria Detector False Positives Come From?](https://github.com/Tech-sam-90/malaria_fp_analysis)**<br>
 A controlled study of two YOLOv12s detectors on 6,593 thick-smear images from Uganda and Ghana (Lacuna dataset), using seven spatial and statistical analyses. The evidence does not support white blood cells as a systematic source of false positives, and points mitigation toward staining and preparation variability. *MICCAI 2026 MIRASOL workshop (oral).*
 
-**[Condition-Aware ICU Deterioration Risk](https://github.com/Tech-sam-90/condition-aware_risk_CDSS)**<br>
-Diagnosis-conditioned early-warning models on MIMIC-IV, benchmarking six sequence architectures at 1–3 h horizons. The best model (BiLSTM + attention, ROC-AUC 0.76) is served as a Dockerized FastAPI + WebSocket streaming service, with limitations documented up front.
-
 **ClinFuse: Multimodal Cancer Survival Prediction** *(in progress)*<br>
 Survival prediction that adds clinical variables (stage, grade, age) to a whole-slide image and RNA model (building on SurvPath), trained to rank patients with a Cox loss and tested with whole hospitals held out. Without stage, it reaches c-index 0.712 vs 0.601 (kidney) and 0.671 vs 0.556 (endometrial) against SurvPath, and the ordering holds on external CPTAC hospitals. Team project; my part was data processing and training on the Narval cluster.
+
+**Fetal Ultrasound Plane Classification: Bias and Ethics Across Datasets**<br>
+A project classifying standard fetal ultrasound planes (brain, abdomen, femur, thorax and others) using public datasets. My part is measuring bias across the datasets and setting out the ethical issues, following the review of public fetal ultrasound datasets by Fiorentino et al. (npj Digital Medicine, 2025).
+
+**LLM Evaluation Harness for a Maternal-Health Chatbot (Jacaranda Health)**<br>
+An M.S. capstone with Jacaranda Health, building automated tests that run before a new version of their maternal-health SMS assistant is released. I built the evaluator for the retrieval-augmented (RAG) system, with measures for retrieval, faithfulness to the sources, answer relevance and correctness, and I coordinate the shared pipeline.
+
+**[Condition-Aware ICU Deterioration Risk](https://github.com/Tech-sam-90/condition-aware_risk_CDSS)**<br>
+Diagnosis-conditioned early-warning models on MIMIC-IV, benchmarking six sequence architectures at 1–3 h horizons. The best model (BiLSTM + attention, ROC-AUC 0.76) is served as a Dockerized FastAPI + WebSocket streaming service, with limitations documented up front.
 
 ---
 
