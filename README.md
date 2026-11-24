@@ -14,20 +14,20 @@ I'm an M.S. student in Engineering AI at **Carnegie Mellon University Africa**. 
 
 ### Selected projects
 
-**[ICTC: Instruction-Conditioned Token Compression for 3D CT Vision–Language Models](https://github.com/Tech-sam-90/3d_compression)**<br>
-A dual-stage, instruction-conditioned token compressor for 3D chest CT. A Perceiver stage distils each slice and a FiLM-conditioned stage aggregates slices into a fixed budget of visual tokens for a LoRA-adapted language model that writes the radiology report. On CT-RATE validation (3,039 scans): ROUGE-L 0.273, BLEU-4 0.128, RaTEScore 0.801. *Summer 2026 research internship with Prof. Prasenjit Mitra.*
+**[Scan-Specific Information in Compressed 3D CT Vision–Language Models](https://github.com/Tech-sam-90/3d_compression)**<br>
+A vision–language pipeline that writes radiology reports from 3D chest CT, compressing each volume into a small budget of visual tokens. Swapping scans between reports showed the model often wrote template-like reports that barely depended on the scan, so the project now measures how much scan-specific information survives compression, and how to keep it. *Research internship with Prof. Prasenjit Mitra (May–Aug 2026), continuing.*
 
 **[FPN-Mamba: Linear-Time Bidirectional State Space Feature Pyramids for Small-Lesion Brain MRI Classification](https://github.com/Tech-sam-90/fpn-inceptentionnet)**<br>
 Feature pyramid plus bidirectional Mamba for small brain-metastasis screening on UCSF-BMSR. It outperforms a self-attention baseline (InceptentionNet) on AUC (0.982 vs 0.897) and smallest-lesion recall (0.870 vs 0.788) across 5 seeds × 3 folds, and is 3.7× faster per step than a matched attention mixer at 512 px. *NeurIPS 2026 Africa in AI workshop.*
 
 **[Where Do Malaria Detector False Positives Come From?](https://github.com/Tech-sam-90/malaria_fp_analysis)**<br>
-A controlled study of two YOLOv12s detectors on 8,000 thick-smear images from Uganda and Ghana, using seven spatial and statistical analyses. It finds that white blood cells are *not* a systematic source of false positives, which redirects mitigation toward staining variability. *MICCAI 2026 MIRASOL workshop (oral).*
+A controlled study of two YOLOv12s detectors on 6,593 thick-smear images from Uganda and Ghana (Lacuna dataset), using seven spatial and statistical analyses. The evidence does not support white blood cells as a systematic source of false positives, and points mitigation toward staining and preparation variability. *MICCAI 2026 MIRASOL workshop (oral).*
 
 **[Condition-Aware ICU Deterioration Risk](https://github.com/Tech-sam-90/condition-aware_risk_CDSS)**<br>
 Diagnosis-conditioned early-warning models on MIMIC-IV, benchmarking six sequence architectures at 1–3 h horizons. The best model (BiLSTM + attention, ROC-AUC 0.76) is served as a Dockerized FastAPI + WebSocket streaming service, with limitations documented up front.
 
-**Multimodal Cancer Survival Prediction** *(in progress)*<br>
-Generalizable survival modeling from TCGA whole-slide images, RNA and clinical data, building on SurvPath.
+**ClinFuse: Multimodal Cancer Survival Prediction** *(in progress)*<br>
+Survival prediction that adds clinical variables (stage, grade, age) to a whole-slide image and RNA model (building on SurvPath), trained to rank patients with a Cox loss and tested with whole hospitals held out. Without stage, it reaches c-index 0.712 vs 0.601 (kidney) and 0.671 vs 0.556 (endometrial) against SurvPath, and the ordering holds on external CPTAC hospitals. Team project; my part was data processing and training on the Narval cluster.
 
 ---
 
